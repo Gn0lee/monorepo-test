@@ -1,0 +1,19 @@
+{
+  "name": "monorepo-test",
+  "version": "1.0.0",
+  "private": true,
+  "license": "MIT",
+  "workspaces": [
+    "./packages/app1",
+    "./packages/design_system"
+  ],
+  "scripts": {
+    "start": "concurrently 'cd ./packages/app1 && yarn start' 'cd ./packages/design_system && yarn start'",
+    "build": "concurrently 'cd ./packages/app1 && yarn build' 'cd ./packages/design_system && yarn build'"
+  },
+  "devDependencies": {
+    "concurrently": "^8.0.1",
+    "prettier": "^2.8.8",
+    "wait-on": "^7.0.1"
+  }
+}
